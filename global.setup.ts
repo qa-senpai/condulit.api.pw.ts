@@ -8,19 +8,16 @@ export default async function globalSetup(config: FullConfig) {
 
   const userController = new UserController(apiContext);
 
+  process.env.EMAIL = process.env.EMAIL?.trim();
+  process.env.PASSWORD = process.env.PASSWORD?.trim();
+  process.env.USERNAME = process.env.USERNAME?.trim();
+
   try {
     const requestBody = {
       email: process.env.EMAIL!,
       password: process.env.PASSWORD!,
       username: process.env.USERNAME!,
     };
-
-    console.log(requestBody.email);
-    console.log(requestBody.password);
-    console.log(requestBody.username);
-
-    console.log("THIS IS MY ENV VARIABLE:");
-    console.log(requestBody);
 
     const response = await userController.registerUser(requestBody);
 
