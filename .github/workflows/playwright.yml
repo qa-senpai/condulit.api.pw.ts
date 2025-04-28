@@ -8,9 +8,9 @@ on:
 jobs:
   test:
     env:
-      EMAIL: ${{ vars.EMAIL }}
-      PASSWORD: ${{ vars.PASSWORD }}
-      USERNAME: ${{ vars.USERNAME }}
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      USERNAME: ${{ secrets.USERNAME }}
 
     timeout-minutes: 60
     runs-on: ubuntu-latest
