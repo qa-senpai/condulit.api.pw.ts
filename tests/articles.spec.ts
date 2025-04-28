@@ -2,7 +2,7 @@ import { test, expect } from "./request.fixture";
 import { Article } from "../controllers/Articles/ArticleType";
 import { ArticlesController } from "../controllers/Articles/ArticlesController";
 
-test.use({ authData: { email: "admin@gm.com" } });
+test.use({ authData: { email: process.env.EMAIL } });
 
 // beforeEach
 // afterEach

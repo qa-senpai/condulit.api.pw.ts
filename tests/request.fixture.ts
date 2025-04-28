@@ -10,7 +10,7 @@ export const test = base.extend<MyFixture>({
   authData: {},
   request: async ({ playwright, request, authData }, use) => {
     const authRequestBody = {
-      user: { email: authData.email, password: "admin1234" },
+      user: { email: authData.email, password: process.env.PASSWORD! },
     };
 
     const authResponse = await request.post("/api/users/login", {
