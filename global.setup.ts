@@ -15,6 +15,9 @@ export default async function globalSetup(config: FullConfig) {
       username: process.env.USERNAME!,
     };
 
+    console.log("THIS IS MY ENV VARIABLE:");
+    console.log(requestBody);
+
     const response = await userController.registerUser(requestBody);
 
     expect(response.status()).toBe(200);
