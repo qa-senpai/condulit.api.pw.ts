@@ -13,6 +13,8 @@ export const test = base.extend<MyFixture>({
       user: { email: authData.email, password: process.env.PASSWORD! },
     };
 
+    console.log(authRequestBody);
+
     const authResponse = await request.post("/api/users/login", {
       data: authRequestBody,
       failOnStatusCode: true,
