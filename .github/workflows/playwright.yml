@@ -7,6 +7,11 @@ on:
 
 jobs:
   test:
+    env:
+      EMAIL: ${{ vars.EMAIL }}
+      PASSWORD: ${{ vars.PASSWORD }}
+      USERNAME: ${{ vars.USERNAME }}
+
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
