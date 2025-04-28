@@ -15,6 +15,10 @@ export default async function globalSetup(config: FullConfig) {
       username: process.env.USERNAME!,
     };
 
+    console.log(requestBody.email);
+    console.log(requestBody.password);
+    console.log(requestBody.username);
+
     console.log("THIS IS MY ENV VARIABLE:");
     console.log(requestBody);
 
